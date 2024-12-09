@@ -1,5 +1,4 @@
-# Adaptive Topic Boundary Refinement (ATBR) for Dialogue Topic Segmentation
-
+# Dynamic Topic Boundary Refinement (DTBR) for Dialogue Topic Segmentation
 
 ## Installation
 
@@ -22,7 +21,20 @@ pip install -r requirements.txt
 
 ## Usage
 
-### 1. Data Preparation
+### 1. Data Description
+
+DialSeg711 is a real-world dataset consisting of 711 English dialogues, sourced from MultiWOZ and KVRET. It exhibits an average of 4.9 topic segments and 5.6 utterances per segment. Doc2Dial is a synthetic dataset comprising over 4,100 English conversations grounded in 450+ documents across four domains. It presents an average of 3.7 topic segments and 3.5 utterances per segment.
+
+#### Details of Dialogue Datasets
+
+| Datasets                         | DialSeg711  | Doc2Dial  |
+|-----------------------------------|-------------|------------|
+| #samples                          | 711         | 4100       |
+| #Avg. Topic Segments/Dialogue     | 4.9         | 3.7        |
+| #Avg. Utterances/Topic Segments   | 3.7         | 3.5        |
+
+
+### 2. Data Preparation
 
 Prepare your dialogue data in the required format. The dataset should consist of a series of utterances, where each dialogue is represented as a sequence of text. The dataset is available right [here](https://drive.google.com/drive/folders/11HSQWJR8qurD8K_ezgo6HqtcULl18UJq?usp=sharing)
 
@@ -30,7 +42,7 @@ Prepare your dialogue data in the required format. The dataset should consist of
 python data_prepare.py --data_dir data/dialseg711 --file_name 711.pkl --output_dir processed_711_data --model_name  sup-simcse-bert-base-uncased
 ```
 
-### 2. Training
+### 3. Training
 
 To train the model on your dataset:
 
@@ -38,7 +50,7 @@ To train the model on your dataset:
 python train.py --data_dir processed_711_data --model_name sup-simcse-bert-base-uncased --output_dir model_711_trained
 ```
 
-### 3. Evaluation
+### 4. Evaluation
 
 To evaluate the model's performance, we provide evaluation scripts and [model](https://drive.google.com/drive/folders/16JPkKNrKHrKYxr6okOyVO0F8w9fI0J6-) for calculating various metrics, such as Pk and WD, based on the segmented output:
 
