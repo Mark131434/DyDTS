@@ -315,7 +315,6 @@ def evaluate_segmentation(input_path: str, model: DialogueBertModel, position_we
 def parse_args():
     parser = argparse.ArgumentParser()
     
-    # 数据相关参数
     parser.add_argument("--model_name", type=str, required=True,
                       help="Directory containing the pkl data files")
     parser.add_argument("--data_path", type=str, required=True,

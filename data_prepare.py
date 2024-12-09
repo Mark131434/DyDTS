@@ -310,20 +310,15 @@ class DialoguePreprocessor:
    
     
     def process_dialogues(self, data_dir: str, output_file: str):
-        """处理所有对话并保存训练数据"""
-        # 读取对话
         dialogues = self.read_dialogues(data_dir)
         processed_data = []
         ap_algorithm = AffinityPropagationAlgorithm(position_weight=13)
         
         for id,(dialogue_id, sentences) in enumerate(tqdm(dialogues, desc="Processing dialogues")):
-            # 获取句子embeddings
             embeddings = self.get_sentence_embeddings(sentences)
             
-            # 找到核心句子
             core_indices = self.find_core_sentences(embeddings,ap_algorithm)
             
-            # 创建对话示例
             example = DialogueExample(
                 dialogue_id=dialogue_id,
                 sentences=sentences,
@@ -331,7 +326,6 @@ class DialoguePreprocessor:
                 core_indices=core_indices
             )
             
-            # 创建训练样本
             training_samples = self.create_training_samples(dialogues, dialogue_id, example)
             
             processed_data.append({
@@ -346,7 +340,6 @@ class DialoguePreprocessor:
         self.log_statistics(processed_data)
     
     def log_statistics(self, processed_data: List[Dict]):
-        """记录数据统计信息"""
         total_core_sentences = 0
         total_training_samples = 0
         hard_negative_samples_dist = []
