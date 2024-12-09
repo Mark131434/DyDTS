@@ -1,0 +1,7 @@
+torch==2.4.1
+tensorflow==2.17.0
+transformers==4.44.2
+numpy==1.26.4
+tqdm==4.66.5
+segeval==2.0.11
+scikit-learn==1.5.2
