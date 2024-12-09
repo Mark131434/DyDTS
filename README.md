@@ -1,15 +1,5 @@
 # Adaptive Topic Boundary Refinement (ATBR) for Dialogue Topic Segmentation
 
-## Overview
-
-The Adaptive Topic Boundary Refinement ([ATBR][baidu](https://www.baidu.com/)) method is an innovative approach to unsupervised Dialogue Topic Segmentation (DTS). This method aims to identify topic boundaries in multi-turn dialogues, improving the segmentation of complex dialogues in real-world applications such as dialogue systems, meeting record generation, and content retrieval. 
-
-## Key Features
-
-- **Unsupervised Approach**: No labeled data required for training
-- **Topic-Aware Propagation Matching (TAPM)**: Efficiently integrates dialogue structure and topic correlation
-- **Dynamic Segmentation**: Iteratively refines topic boundaries to improve segmentation performance
-- **State-of-the-Art Performance**: Outperforms existing baseline methods on benchmark datasets like DialSeg711 and Doc2Dial
 
 ## Installation
 
