@@ -7,8 +7,8 @@ To use this repository, clone the repository and install the required dependenci
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ATBR-DTS.git
-cd ATBR-DTS
+git clone https://github.com/your-username/DyDTS.git
+cd DyDTS
 ```
 
 ### Install dependencies
