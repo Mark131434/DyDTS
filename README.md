@@ -58,10 +58,6 @@ To evaluate the model's performance, we provide evaluation scripts and [model](h
 python inference.py --data_dir data/dialseg711 --model_name sup-simcse-bert-base-uncased --output_dir model_711
 ```
 
-## Performance
-
-Our method outperforms existing baseline models on the DialSeg711 and Doc2Dial datasets, achieving state-of-the-art results. For detailed performance metrics, please refer to the Results section in the original paper.
-
 ## Contributing
 
 We welcome contributions to improve the ATBR method. Feel free to fork the repository and submit pull requests for:
